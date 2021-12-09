@@ -12,3 +12,4 @@ function updateTime () {
 // setInterval function calls updateTime every 1 second
 setInterval(updateTime, 1000);
 updateTime();
+
