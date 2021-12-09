@@ -13,3 +13,14 @@ function updateTime () {
 setInterval(updateTime, 1000);
 updateTime();
 
+
+
+
+
+
+// make a click work
+$(".scheduleBtn").on("click", function(){
+console.log("Badabing");
+});
+
+// Save text area data
