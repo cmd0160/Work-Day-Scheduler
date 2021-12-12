@@ -1,8 +1,8 @@
 const clock = document.querySelector(".dateDisplay");
 const inputTextBox = document.querySelector(".scheduleText");
-const inputTextBtn = document.querySelector(".scheduleBtn");
+let inputTextBtn = document.querySelector(".scheduleBtn");
 
-
+// time display
 function updateTime () {
     const now = moment();
     const readableDisplay = now.format("dddd, MMMM Do YYYY, h:mm:ss a");
@@ -11,7 +11,16 @@ function updateTime () {
 setInterval(updateTime, 1000);
 updateTime();
 
-// make a click work/display textContent
+// updates Timeblock to the assigned color based on the hour
+function hourUpdater() {
+    var currentHour = moment().hours();
+    var blockHour = document.getElementById("#9");
+
+};
+
+hourUpdater();
+
+// logs data to local storage
 inputTextBtn.onclick = function() {
     let data = $(this).attr("data-hour");
     const value = inputTextBox.value;

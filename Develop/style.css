@@ -5,6 +5,8 @@ body {
 }
 header {
   background-image: url("assets/images/alarm clock.jpeg");
+  height: auto;
+  width: auto;
 }
 textarea{
   background: transparent;
