@@ -28,17 +28,45 @@ function updateTime () {
 setInterval(updateTime, 1000);
 updateTime();
 
+    // loop over time blocks
+    $("hour").each(function() {
+        
+        let text = localStorage.getItem($(this).attr("id"));
+        $(this).val(text);
+
+        var blockHour = parseInt($(this).attr("id").split("-")[1]);
+
+        // add class "past" if currentHour is greater than blockHour
+        if(currentHour > blockHour) {
+            $(this).addClass("past");
+        }
+     
+        //remove class "past" and add class "present" if currentHour = blockHourd
+        else if(currentHour === blockHour) {
+            $(this).removeClass("past");
+            $(this).addClass("present");
+        }
+     
+        // remove class "past", remove class "present", add class "future" if time has passed
+        else {
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+            $(this).addClass("future");
+        }
+      
+    });
+
 // updates Timeblock to the assigned color based on the hour
 function hourUpdater() {
-    var currentHour = moment().hh();
-    var timeblockHour = document.getElementById("#9");
+    var currentHour = moment().hour();
+    var timeblockHour = document.getElementById("9");
 
     if (timeblockHour < currentHour) {
-    $(this).addClass("#past");
+    $(this).addClass("past");
     } else if (timeblockHour === currentHour) {
-    $(this).addClass("#present");   
+    $(this).addClass("present");   
     } else if (timeblockHour > currentHour) {
-    $(this).addClass("#future");   
+    $(this).addClass("future");   
     };
 };
 hourUpdater();
