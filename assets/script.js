@@ -36,7 +36,9 @@ inputTextBtn.onclick = function() {
         localStorage.setItem(data, value);
     }
 }
-
+// Allows data to stay after refresh
+$('#9').val(localStorage.getItem('hour-9'));
+$('#10').val(localStorage.getItem('hour-10'));
 
 
 
