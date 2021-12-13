@@ -1,5 +1,5 @@
 const clock = document.querySelector(".dateDisplay");
-const inputTextBox = document.querySelector(".scheduleText");
+const input9TextBox = document.querySelector(".schedule9Text");
 const input10TextBox = document.querySelector(".schedule10Text");
 const input11TextBox = document.querySelector(".schedule11Text");
 const input12TextBox = document.querySelector(".schedule12Text");
@@ -8,7 +8,8 @@ const input2TextBox = document.querySelector(".schedule2Text");
 const input3TextBox = document.querySelector(".schedule3Text");
 const input4TextBox = document.querySelector(".schedule4Text");
 const input5TextBox = document.querySelector(".schedule5Text");
-let inputTextBtn = document.querySelector(".scheduleBtn");
+
+let input9TextBtn = document.querySelector(".hour-9-scheduleBtn");
 let input10TextBtn = document.querySelector(".hour-10-scheduleBtn");
 let input11TextBtn = document.querySelector(".hour-11-scheduleBtn");
 let input12TextBtn = document.querySelector(".hour-12-scheduleBtn");
@@ -29,7 +30,7 @@ updateTime();
 
 // updates Timeblock to the assigned color based on the hour
 function hourUpdater() {
-    var currentHour = moment().hh;
+    var currentHour = moment().hh();
     var timeblockHour = document.getElementById("#9");
 
     if (timeblockHour < currentHour) {
@@ -44,9 +45,9 @@ hourUpdater();
 
 // logs data to local storage
 // Text box 9
-inputTextBtn.onclick = function() {
+input9TextBtn.onclick = function() {
     let data = $(this).attr("data-hour");
-    const value = inputTextBox.value;
+    const value = input9TextBox.value;
     console.log(value);
 
     if(value) {
